@@ -1,4 +1,4 @@
-# Capstone
+# Capstone (just checking)
 
 Monorepo with Next.js frontend, FastAPI backend, and PostgreSQL (pgvector). Docker Compose runs everything with one command.
 
