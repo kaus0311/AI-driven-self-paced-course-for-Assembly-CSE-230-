@@ -14,5 +14,5 @@ backend/.env
 
 # Docker
 db_data
-
+.env
 
