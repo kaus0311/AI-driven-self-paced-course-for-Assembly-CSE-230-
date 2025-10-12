@@ -53,6 +53,8 @@ cd frontend && npm install && npm run dev
 Backend:
 ```bash
 export OPENAI_API_KEY="sk-your-key"
+or set your in the .env file with
+OPENAI_API_KEY="sk-your-key"
 # Optional: export OPENAI_MODEL="gpt-4o-mini"
 cd backend && pip install -r requirements.txt && uvicorn app.main:app --reload
 ```
