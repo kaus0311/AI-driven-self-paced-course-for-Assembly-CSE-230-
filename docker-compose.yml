@@ -41,7 +41,7 @@ services:
     depends_on:
       - backend
     ports:
-      - "3000:3000"
+      - "3001:3000"
 
 volumes:
   db_data:
