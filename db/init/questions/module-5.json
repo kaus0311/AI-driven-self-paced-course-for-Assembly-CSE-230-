@@ -1,0 +1,107 @@
+{
+  "moduleId": "5",
+  "code": "CSE230-M5",
+  "title": "Chapter 2 – Linking, Loading, and Summary",
+  "questions": [
+    {
+      "id": "21",
+      "prompt": "The primary responsibilities of a linker include:",
+      "choices": [
+        { "id": "A", "text": "Resolving symbols and performing relocations", "isCorrect": true },
+        { "id": "B", "text": "Compiling source code to assembly", "isCorrect": false },
+        { "id": "C", "text": "Executing the program", "isCorrect": false },
+        { "id": "D", "text": "Debugging runtime errors", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "22",
+      "prompt": "The .text section of an ELF file contains:",
+      "choices": [
+        { "id": "A", "text": "Initialized global variables", "isCorrect": false },
+        { "id": "B", "text": "The executable machine code instructions", "isCorrect": true },
+        { "id": "C", "text": "Debug symbols", "isCorrect": false },
+        { "id": "D", "text": "The program's stack", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "23",
+      "prompt": "The .bss section is used for:",
+      "choices": [
+        { "id": "A", "text": "Uninitialized or zero-initialized global variables", "isCorrect": true },
+        { "id": "B", "text": "Program instructions", "isCorrect": false },
+        { "id": "C", "text": "String literals", "isCorrect": false },
+        { "id": "D", "text": "Function pointers", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "24",
+      "prompt": "Relocations are needed when:",
+      "choices": [
+        { "id": "A", "text": "Absolute addresses are unknown until link time", "isCorrect": true },
+        { "id": "B", "text": "The program uses floating-point operations", "isCorrect": false },
+        { "id": "C", "text": "Debugging information is needed", "isCorrect": false },
+        { "id": "D", "text": "The compiler needs optimization hints", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "25",
+      "prompt": "In a typical MIPS memory layout:",
+      "choices": [
+        { "id": "A", "text": "Code at low addresses, then data, heap grows up, stack grows down from high addresses", "isCorrect": true },
+        { "id": "B", "text": "Stack at low addresses, heap at high addresses", "isCorrect": false },
+        { "id": "C", "text": "All sections intermixed randomly", "isCorrect": false },
+        { "id": "D", "text": "Data before code, then stack, then heap", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "46",
+      "prompt": "The .data section of an executable contains:",
+      "choices": [
+        { "id": "A", "text": "Executable code instructions", "isCorrect": false },
+        { "id": "B", "text": "Initialized global and static variables", "isCorrect": true },
+        { "id": "C", "text": "Uninitialized variables", "isCorrect": false },
+        { "id": "D", "text": "Stack space", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "47",
+      "prompt": "A static library differs from a dynamic library in that:",
+      "choices": [
+        { "id": "A", "text": "Static libraries are linked at compile/link time; dynamic libraries are loaded at runtime", "isCorrect": true },
+        { "id": "B", "text": "Static libraries are larger than dynamic libraries", "isCorrect": false },
+        { "id": "C", "text": "Dynamic libraries cannot be shared between programs", "isCorrect": false },
+        { "id": "D", "text": "Static libraries require operating system support", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "48",
+      "prompt": "The loader is responsible for:",
+      "choices": [
+        { "id": "A", "text": "Compiling source code", "isCorrect": false },
+        { "id": "B", "text": "Loading the program into memory and setting up initial execution state", "isCorrect": true },
+        { "id": "C", "text": "Optimizing code", "isCorrect": false },
+        { "id": "D", "text": "Debugging programs", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "49",
+      "prompt": "Position-independent code (PIC) is important for:",
+      "choices": [
+        { "id": "A", "text": "Improving CPU performance", "isCorrect": false },
+        { "id": "B", "text": "Reducing code size", "isCorrect": false },
+        { "id": "C", "text": "Allowing code to execute correctly regardless of its absolute memory location", "isCorrect": true },
+        { "id": "D", "text": "Preventing buffer overflows", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "50",
+      "prompt": "The global pointer ($gp) in MIPS is used to:",
+      "choices": [
+        { "id": "A", "text": "Store the program counter", "isCorrect": false },
+        { "id": "B", "text": "Provide efficient access to global/static data in the middle 64KB of memory", "isCorrect": true },
+        { "id": "C", "text": "Point to the top of the stack", "isCorrect": false },
+        { "id": "D", "text": "Store function return addresses", "isCorrect": false }
+      ]
+    }
+  ]
+}

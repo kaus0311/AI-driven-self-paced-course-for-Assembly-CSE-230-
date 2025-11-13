@@ -1,6 +1,9 @@
 import Link from "next/link";
 
-export default function ModuleDetailPage({ params }: { params: { id: string } }) {
+export default async function ModuleDetailPage(
+  { params }: { params: Promise<{id: string} > }
+) {
+  const { id } = await params; 
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -74,9 +77,12 @@ export default function ModuleDetailPage({ params }: { params: { id: string } })
           <button className="px-6 py-3 font-semibold text-black border-b-2 border-black">
             Learning Content
           </button>
-          <button className="px-6 py-3 text-gray-600 hover:text-black transition-colors">
+          <Link
+            href={`/module/${id}/mastery`}               
+            className="px-6 py-3 text-gray-600 hover:text-black"
+          >
             Practice & Mastery
-          </button>
+          </Link>
           <button className="px-6 py-3 text-gray-600 hover:text-black transition-colors">
             Coding Sandbox
           </button>
