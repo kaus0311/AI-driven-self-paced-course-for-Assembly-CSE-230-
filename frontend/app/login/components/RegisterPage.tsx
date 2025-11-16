@@ -86,7 +86,7 @@ export function RegisterPage() {
     const result = await register(formData.name, formData.email, formData.password, userType || 'student');
 
     if (result.success) {
-      router.push('/');
+      router.push('/dashboard');
     } else {
       // Show error
       setErrors({ general: result.error || 'Registration failed.' });

@@ -38,7 +38,7 @@ export function LoginPage() {
     const result = await login(formData.email, formData.password);
 
     if (result.success) {
-      router.push('/');
+      router.push('/dashboard');
     } else {
       setError(result.error || 'Login failed.');
       setIsLoading(false);
