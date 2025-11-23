@@ -35,7 +35,6 @@ def verify_token(credentials: HTTPAuthorizationCredentials = Depends(security)) 
         raise HTTPException(status_code=401, detail="Invalid authentication credentials")
     return userid
 
-
 @router.post("/signup", response_model=UserResponse)
 async def signup(user: UserCreate, db: db_dependency) -> UserResponse:
     existing = db.execute(
@@ -65,3 +64,4 @@ async def protected_route(userid: str = Depends(verify_token)) -> UserResponse:
 @router.get("/users/me", response_model=UserResponse)
 async def read_users_me(userid: str = Depends(verify_token)) -> UserResponse:
     return UserResponse(userid=userid, message=f"Current user: {userid}")
+
