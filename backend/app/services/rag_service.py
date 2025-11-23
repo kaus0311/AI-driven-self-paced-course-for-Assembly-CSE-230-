@@ -1,0 +1,6 @@
+async def ingest_documents_for_course(course_id: int, module, items):
+    # extract text from pages/files, generate embeddings, store in vector DB
+    ...
+async def retrieve_relevant_docs(course_id: int, query: str, k: int=5):
+    # query vector DB and return docs + metadata
+    ...

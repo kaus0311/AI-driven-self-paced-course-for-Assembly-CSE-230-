@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from datetime import datetime
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text, Enum, Boolean
 from sqlalchemy.ext.declarative import declarative_base
@@ -109,3 +110,14 @@ class Submission(Base):
     # Relation
     assignment = relationship("Assignment", back_populates="submissions")
     student = relationship("User", back_populates="submissions")
+=======
+from app.services.db import Base
+from sqlalchemy import Column, Integer, String, DateTime, func
+
+class Users(Base):
+    __tablename__ = "users"
+    id = Column(Integer, primary_key =True, index=True)
+    userid = Column(String, unique=True)
+    hashed_password = Column(String)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+>>>>>>> f59db2e46bb1cab0426c03bc8c1e4a4aa66c723d

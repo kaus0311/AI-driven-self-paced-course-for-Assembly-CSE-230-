@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
 from contextlib import contextmanager
@@ -21,10 +22,35 @@ def get_db() -> Session:
     generator to get database session
     use FastAPI
     """
+=======
+import os
+from contextlib import contextmanager
+from sqlalchemy import create_engine
+from sqlalchemy.orm import DeclarativeBase, sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql://postgres:postgres@localhost:5432/canvas_ai_tutor",
+)
+
+engine = create_engine(DATABASE_URL, future=True, pool_pre_ping=True)
+
+
+Base = declarative_base()
+
+
+SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False, future=True)
+
+
+# @contextmanager
+def get_session():
+>>>>>>> f59db2e46bb1cab0426c03bc8c1e4a4aa66c723d
     db = SessionLocal()
     try:
         yield db
     finally:
+<<<<<<< HEAD
         db.close()
 
 
@@ -61,3 +87,6 @@ def drop_db():
     """
     from app.models.domain_models import Base
     Base.metadata.drop_all(bind=engine)
+=======
+        db.close()
+>>>>>>> f59db2e46bb1cab0426c03bc8c1e4a4aa66c723d
