@@ -1,4 +1,4 @@
-# Capstone (just checking)
+# Capstone
 
 Monorepo with Next.js frontend, FastAPI backend, and PostgreSQL (pgvector). Docker Compose runs everything with one command.
 
@@ -58,6 +58,16 @@ OPENAI_API_KEY="sk-your-key"
 # Optional: export OPENAI_MODEL="gpt-4o-mini"
 cd backend && pip install -r requirements.txt && uvicorn app.main:app --reload
 ```
+
+## Configuration
+
+- `NEXT_PUBLIC_API_URL` (frontend): Base URL the browser uses when calling FastAPI.
+  Defaults to `http://localhost:8000`, which works for both local dev and Docker because
+  the backend is published on the host. Override it when deploying elsewhere.
+- `CORS_ALLOW_ORIGINS` (backend): Comma-separated list of origins that FastAPI should
+  allow. The default enables `http://localhost:3000`, `http://127.0.0.1:3000`, and the
+  Docker service name `http://frontend:3000`. Set this if your frontend is served from a
+  different domain.
 
 ## Tutor API
 

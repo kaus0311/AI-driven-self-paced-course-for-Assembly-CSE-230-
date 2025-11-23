@@ -1,0 +1,107 @@
+{
+  "moduleId": "2",
+  "code": "CSE230-M2",
+  "title": "Chapter 2 – ALU & Data Transfer",
+  "questions": [
+    {
+      "id": "6",
+      "prompt": "The difference between lw (load word) and sw (store word) is:",
+      "choices": [
+        { "id": "A", "text": "lw reads from memory into a register; sw writes from a register to memory", "isCorrect": true },
+        { "id": "B", "text": "lw writes to memory; sw reads from memory", "isCorrect": false },
+        { "id": "C", "text": "Both instructions read from memory", "isCorrect": false },
+        { "id": "D", "text": "lw works with bytes; sw works with words", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "7",
+      "prompt": "The instruction addi $t0, $t1, -5 will:",
+      "choices": [
+        { "id": "A", "text": "Cause a syntax error", "isCorrect": false },
+        { "id": "B", "text": "Add -5 to $t1 and store result in $t0 (effectively subtract 5)", "isCorrect": true },
+        { "id": "C", "text": "Store -5 in $t0", "isCorrect": false },
+        { "id": "D", "text": "Add 5 to $t1 using two's complement", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "8",
+      "prompt": "In little-endian byte ordering, the value 0x12345678 stored at address 0x1000 places:",
+      "choices": [
+        { "id": "A", "text": "0x12 at 0x1000 (least significant byte at lowest address)", "isCorrect": false },
+        { "id": "B", "text": "0x78 at 0x1000 (least significant byte at lowest address)", "isCorrect": true },
+        { "id": "C", "text": "0x12 at 0x1003", "isCorrect": false },
+        { "id": "D", "text": "All bytes in reverse at higher addresses", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "9",
+      "prompt": "The lh (load halfword) instruction:",
+      "choices": [
+        { "id": "A", "text": "Loads 2 bytes and zero-extends to 32 bits", "isCorrect": false },
+        { "id": "B", "text": "Loads 2 bytes and sign-extends to 32 bits", "isCorrect": true },
+        { "id": "C", "text": "Loads 4 bytes", "isCorrect": false },
+        { "id": "D", "text": "Loads 1 byte and extends it", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "10",
+      "prompt": "To copy the value from register $t1 to $t0, you can use:",
+      "choices": [
+        { "id": "A", "text": "addi $t0, $t1, 0 or move $t0, $t1", "isCorrect": true },
+        { "id": "B", "text": "lw $t0, 0($t1)", "isCorrect": false },
+        { "id": "C", "text": "add $t0, $zero, $zero", "isCorrect": false },
+        { "id": "D", "text": "sw $t1, 0($t0)", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "31",
+      "prompt": "The instruction lui $t0, 0x1234 will:",
+      "choices": [
+        { "id": "A", "text": "Load 0x1234 into the lower 16 bits of $t0", "isCorrect": false },
+        { "id": "B", "text": "Load 0x1234 into the upper 16 bits of $t0 (bits 31-16), lower 16 bits are zeroed", "isCorrect": true },
+        { "id": "C", "text": "Add 0x1234 to $t0", "isCorrect": false },
+        { "id": "D", "text": "Store 0x1234 in memory", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "32",
+      "prompt": "In MIPS, to load a byte and zero-extend it, you use:",
+      "choices": [
+        { "id": "A", "text": "lb", "isCorrect": false },
+        { "id": "B", "text": "lbu", "isCorrect": true },
+        { "id": "C", "text": "lh", "isCorrect": false },
+        { "id": "D", "text": "lw", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "33",
+      "prompt": "The base address in a lw $t0, offset($base) instruction is stored in:",
+      "choices": [
+        { "id": "A", "text": "The offset field of the instruction", "isCorrect": false },
+        { "id": "B", "text": "The register specified as $base", "isCorrect": true },
+        { "id": "C", "text": "The $t0 register", "isCorrect": false },
+        { "id": "D", "text": "Memory at address offset", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "34",
+      "prompt": "If $t0 = 0xFFFFFFFF and you execute andi $t1, $t0, 0x00FF, the result in $t1 is:",
+      "choices": [
+        { "id": "A", "text": "0xFFFFFFFF", "isCorrect": false },
+        { "id": "B", "text": "0x000000FF", "isCorrect": true },
+        { "id": "C", "text": "0x00000000", "isCorrect": false },
+        { "id": "D", "text": "0xFF00FF00", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "35",
+      "prompt": "The sll (shift left logical) instruction performs:",
+      "choices": [
+        { "id": "A", "text": "Logical left shift, filling right bits with zeros", "isCorrect": true },
+        { "id": "B", "text": "Arithmetic left shift, preserving sign bit", "isCorrect": false },
+        { "id": "C", "text": "Rotation of bits to the left", "isCorrect": false },
+        { "id": "D", "text": "Logical right shift", "isCorrect": false }
+      ]
+    }
+  ]
+}
