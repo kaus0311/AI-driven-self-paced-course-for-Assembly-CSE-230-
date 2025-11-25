@@ -96,7 +96,7 @@ export default function MasteryQuiz({ initialQuiz }: { initialQuiz: Quiz }) {
               key={choice.id}
               onClick={() => pick(choice.id)}
               disabled={wasChecked}
-              className={`w-full text-left p-4 rounded-lg transition ${skin}`}
+              className={`w-full text-left p-4 rounded-lg transition text-gray-900 ${skin}`}
             >
               <span className="inline-flex items-center justify-center w-6 h-6 mr-2 rounded-full border text-xs font-semibold">
                 {choice.id}
