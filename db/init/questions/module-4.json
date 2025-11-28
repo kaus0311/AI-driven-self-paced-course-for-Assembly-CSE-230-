@@ -1,0 +1,107 @@
+{
+  "moduleId": "4",
+  "code": "CSE230-M4",
+  "title": "Chapter 2 – Procedure Execution",
+  "questions": [
+    {
+      "id": "16",
+      "prompt": "When jal (jump and link) executes, it:",
+      "choices": [
+        { "id": "A", "text": "Stores PC+4 in $ra and jumps to the target address", "isCorrect": true },
+        { "id": "B", "text": "Stores PC in $ra and jumps to the target", "isCorrect": false },
+        { "id": "C", "text": "Jumps to the target without saving a return address", "isCorrect": false },
+        { "id": "D", "text": "Stores the target address in $ra", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "17",
+      "prompt": "The callee-saved registers in MIPS are:",
+      "choices": [
+        { "id": "A", "text": "$t0-$t9", "isCorrect": false },
+        { "id": "B", "text": "$s0-$s7", "isCorrect": true },
+        { "id": "C", "text": "$a0-$a3", "isCorrect": false },
+        { "id": "D", "text": "$v0-$v1", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "18",
+      "prompt": "A typical function prologue that saves the return address looks like:",
+      "choices": [
+        { "id": "A", "text": "addi $sp, $sp, -4 then sw $ra, 0($sp)", "isCorrect": true },
+        { "id": "B", "text": "lw $ra, 0($sp) then addi $sp, $sp, 4", "isCorrect": false },
+        { "id": "C", "text": "jal subroutine", "isCorrect": false },
+        { "id": "D", "text": "move $ra, $sp", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "19",
+      "prompt": "Function arguments are typically passed in registers:",
+      "choices": [
+        { "id": "A", "text": "$v0-$v3", "isCorrect": false },
+        { "id": "B", "text": "$a0-$a3 (additional args on stack)", "isCorrect": true },
+        { "id": "C", "text": "$s0-$s3", "isCorrect": false },
+        { "id": "D", "text": "$t0-$t3", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "20",
+      "prompt": "For a properly balanced stack, at the end of a function (before returning):",
+      "choices": [
+        { "id": "A", "text": "The stack pointer $sp must be restored to its original value", "isCorrect": true },
+        { "id": "B", "text": "The stack pointer should point to the return address", "isCorrect": false },
+        { "id": "C", "text": "$sp should be decremented by 4", "isCorrect": false },
+        { "id": "D", "text": "$sp can be left modified", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "41",
+      "prompt": "The caller-saved (temporary) registers in MIPS are:",
+      "choices": [
+        { "id": "A", "text": "$s0-$s7", "isCorrect": false },
+        { "id": "B", "text": "$t0-$t9", "isCorrect": true },
+        { "id": "C", "text": "$a0-$a3", "isCorrect": false },
+        { "id": "D", "text": "$ra", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "42",
+      "prompt": "When a function needs more than 4 arguments, the additional arguments are:",
+      "choices": [
+        { "id": "A", "text": "Stored in $t registers", "isCorrect": false },
+        { "id": "B", "text": "Stored in $s registers", "isCorrect": false },
+        { "id": "C", "text": "Passed on the stack", "isCorrect": true },
+        { "id": "D", "text": "Cannot be passed", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "43",
+      "prompt": "The jr $ra instruction:",
+      "choices": [
+        { "id": "A", "text": "Jumps to the address stored in $ra (returns from function)", "isCorrect": true },
+        { "id": "B", "text": "Jumps and stores return address in $ra", "isCorrect": false },
+        { "id": "C", "text": "Jumps to a register and links", "isCorrect": false },
+        { "id": "D", "text": "Returns to the caller and stores PC in $ra", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "44",
+      "prompt": "A leaf function is one that:",
+      "choices": [
+        { "id": "A", "text": "Calls other functions", "isCorrect": false },
+        { "id": "B", "text": "Does not call any other functions", "isCorrect": true },
+        { "id": "C", "text": "Returns multiple values", "isCorrect": false },
+        { "id": "D", "text": "Has no local variables", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "45",
+      "prompt": "The $fp (frame pointer) register is used to:",
+      "choices": [
+        { "id": "A", "text": "Store the return address", "isCorrect": false },
+        { "id": "B", "text": "Point to a fixed location in the stack frame for easier access to local variables and saved registers", "isCorrect": true },
+        { "id": "C", "text": "Store function arguments", "isCorrect": false },
+        { "id": "D", "text": "Replace the stack pointer", "isCorrect": false }
+      ]
+    }
+  ]
+}

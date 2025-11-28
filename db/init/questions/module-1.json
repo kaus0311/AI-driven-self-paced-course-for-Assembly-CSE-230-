@@ -1,0 +1,107 @@
+{
+  "moduleId": "1",
+  "code": "CSE230-M1",
+  "title": "Chapter 1 – Computer Abstractions & Performance",
+  "questions": [
+    {
+      "id": "1",
+      "prompt": "Moore's Law states that:",
+      "choices": [
+        { "id": "A", "text": "The number of transistors on a chip doubles approximately every 18-24 months", "isCorrect": true },
+        { "id": "B", "text": "CPU clock speed doubles every year", "isCorrect": false },
+        { "id": "C", "text": "Memory capacity increases linearly over time", "isCorrect": false },
+        { "id": "D", "text": "Power consumption decreases exponentially", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "2",
+      "prompt": "The primary goal of abstraction in computer architecture is to:",
+      "choices": [
+        { "id": "A", "text": "Make hardware cheaper to manufacture", "isCorrect": false },
+        { "id": "B", "text": "Hide complexity and provide simpler interfaces at each level", "isCorrect": true },
+        { "id": "C", "text": "Increase the clock speed of the processor", "isCorrect": false },
+        { "id": "D", "text": "Reduce the physical size of components", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "3",
+      "prompt": "CPU time can be calculated as:",
+      "choices": [
+        { "id": "A", "text": "Clock Rate × CPI", "isCorrect": false },
+        { "id": "B", "text": "(Instruction Count × CPI) / Clock Rate", "isCorrect": true },
+        { "id": "C", "text": "Instruction Count / Clock Rate", "isCorrect": false },
+        { "id": "D", "text": "CPI × Clock Rate / Instruction Count", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "4",
+      "prompt": "CPI (Cycles Per Instruction) is defined as:",
+      "choices": [
+        { "id": "A", "text": "Clock cycles required per instruction on average", "isCorrect": true },
+        { "id": "B", "text": "Number of instructions executed per second", "isCorrect": false },
+        { "id": "C", "text": "The clock frequency of the CPU", "isCorrect": false },
+        { "id": "D", "text": "Total instruction count in a program", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "5",
+      "prompt": "If a program spends 40% of its time in a function that you speed up by 3×, the overall speedup is approximately:",
+      "choices": [
+        { "id": "A", "text": "3.0×", "isCorrect": false },
+        { "id": "B", "text": "1.36×", "isCorrect": true },
+        { "id": "C", "text": "2.5×", "isCorrect": false },
+        { "id": "D", "text": "1.8×", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "26",
+      "prompt": "In comparing two computers, if Computer A has a lower CPI but Computer B has a higher clock rate, which statement is true?",
+      "choices": [
+        { "id": "A", "text": "Computer A is always faster", "isCorrect": false },
+        { "id": "B", "text": "Computer B is always faster", "isCorrect": false },
+        { "id": "C", "text": "You must calculate CPU time = (IC × CPI) / Clock Rate to determine which is faster", "isCorrect": true },
+        { "id": "D", "text": "CPI does not affect performance", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "27",
+      "prompt": "Response time (execution time) measures:",
+      "choices": [
+        { "id": "A", "text": "The number of tasks completed per unit time", "isCorrect": false },
+        { "id": "B", "text": "The total time to complete a single task from start to finish", "isCorrect": true },
+        { "id": "C", "text": "The time between interrupts", "isCorrect": false },
+        { "id": "D", "text": "The average time for all instructions", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "28",
+      "prompt": "Throughput in computer performance refers to:",
+      "choices": [
+        { "id": "A", "text": "The time to complete one task", "isCorrect": false },
+        { "id": "B", "text": "The number of tasks completed per unit of time", "isCorrect": true },
+        { "id": "C", "text": "The clock frequency of the processor", "isCorrect": false },
+        { "id": "D", "text": "The bandwidth of the memory bus", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "29",
+      "prompt": "If you improve one component of a system by a factor of 10, but that component only accounts for 20% of execution time, the maximum overall speedup is:",
+      "choices": [
+        { "id": "A", "text": "10×", "isCorrect": false },
+        { "id": "B", "text": "2.0×", "isCorrect": false },
+        { "id": "C", "text": "About 1.22×", "isCorrect": true },
+        { "id": "D", "text": "5.0×", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "30",
+      "prompt": "Which of the following is NOT a level of abstraction in computer systems?",
+      "choices": [
+        { "id": "A", "text": "High-level language (e.g., C, Java)", "isCorrect": false },
+        { "id": "B", "text": "Assembly language", "isCorrect": false },
+        { "id": "C", "text": "Machine code (ISA)", "isCorrect": false },
+        { "id": "D", "text": "Network protocols", "isCorrect": true }
+      ]
+    }
+  ]
+}

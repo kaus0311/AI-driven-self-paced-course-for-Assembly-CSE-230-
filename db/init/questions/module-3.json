@@ -1,0 +1,107 @@
+{
+  "moduleId": "3",
+  "code": "CSE230-M3",
+  "title": "Chapter 2 – Branch & Machine Code",
+  "questions": [
+    {
+      "id": "11",
+      "prompt": "For a beq (branch if equal) instruction, the target address is calculated as:",
+      "choices": [
+        { "id": "A", "text": "PC + 4 + sign_extend(offset) × 4", "isCorrect": true },
+        { "id": "B", "text": "PC + offset", "isCorrect": false },
+        { "id": "C", "text": "offset × 4", "isCorrect": false },
+        { "id": "D", "text": "PC + sign_extend(offset)", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "12",
+      "prompt": "The j (jump) instruction uses pseudo-direct addressing, which means:",
+      "choices": [
+        { "id": "A", "text": "The 26-bit address is shifted left 2 bits and combined with upper bits of PC+4", "isCorrect": true },
+        { "id": "B", "text": "The address is relative to the current PC", "isCorrect": false },
+        { "id": "C", "text": "The address uses a register value", "isCorrect": false },
+        { "id": "D", "text": "The full 32-bit address is encoded in the instruction", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "13",
+      "prompt": "Which of the following is an I-type instruction?",
+      "choices": [
+        { "id": "A", "text": "add $t0, $t1, $t2", "isCorrect": false },
+        { "id": "B", "text": "lw $t0, 8($sp)", "isCorrect": true },
+        { "id": "C", "text": "j 0x400000", "isCorrect": false },
+        { "id": "D", "text": "sll $t0, $t1, 4", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "14",
+      "prompt": "In a beq instruction, the 16-bit offset represents:",
+      "choices": [
+        { "id": "A", "text": "A byte offset from PC", "isCorrect": false },
+        { "id": "B", "text": "A word offset (number of words from PC+4)", "isCorrect": true },
+        { "id": "C", "text": "An absolute memory address", "isCorrect": false },
+        { "id": "D", "text": "A register number", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "15",
+      "prompt": "An I-type instruction has fields in this order:",
+      "choices": [
+        { "id": "A", "text": "opcode (6) | rs (5) | rt (5) | immediate (16)", "isCorrect": true },
+        { "id": "B", "text": "opcode (6) | rs (5) | rd (5) | shamt (5) | funct (6)", "isCorrect": false },
+        { "id": "C", "text": "opcode (6) | address (26)", "isCorrect": false },
+        { "id": "D", "text": "opcode (6) | rt (5) | rs (5) | rd (5) | funct (11)", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "36",
+      "prompt": "A R-type instruction format includes which fields?",
+      "choices": [
+        { "id": "A", "text": "opcode (6) | address (26)", "isCorrect": false },
+        { "id": "B", "text": "opcode (6) | rs (5) | rt (5) | rd (5) | shamt (5) | funct (6)", "isCorrect": true },
+        { "id": "C", "text": "opcode (6) | rs (5) | rt (5) | immediate (16)", "isCorrect": false },
+        { "id": "D", "text": "opcode (6) | register (26)", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "37",
+      "prompt": "The bne (branch if not equal) instruction will branch when:",
+      "choices": [
+        { "id": "A", "text": "The two register values are equal", "isCorrect": false },
+        { "id": "B", "text": "The two register values are not equal", "isCorrect": true },
+        { "id": "C", "text": "One register is less than the other", "isCorrect": false },
+        { "id": "D", "text": "One register is zero", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "38",
+      "prompt": "In MIPS, the opcode field is always:",
+      "choices": [
+        { "id": "A", "text": "The rightmost 6 bits (bits 5-0)", "isCorrect": false },
+        { "id": "B", "text": "The middle 6 bits", "isCorrect": false },
+        { "id": "C", "text": "The leftmost 6 bits (bits 31-26)", "isCorrect": true },
+        { "id": "D", "text": "Variable position depending on instruction type", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "39",
+      "prompt": "The slt (set less than) instruction is which type?",
+      "choices": [
+        { "id": "A", "text": "I-type", "isCorrect": false },
+        { "id": "B", "text": "R-type", "isCorrect": true },
+        { "id": "C", "text": "J-type", "isCorrect": false },
+        { "id": "D", "text": "Pseudo-instruction", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "40",
+      "prompt": "If the PC is at address 0x00400020 and a beq has an offset of 4, the target address is:",
+      "choices": [
+        { "id": "A", "text": "0x00400024", "isCorrect": false },
+        { "id": "B", "text": "0x00400030", "isCorrect": false },
+        { "id": "C", "text": "0x00400034", "isCorrect": true },
+        { "id": "D", "text": "0x00400028", "isCorrect": false }
+      ]
+    }
+  ]
+}
