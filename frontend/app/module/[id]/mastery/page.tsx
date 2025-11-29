@@ -1,7 +1,7 @@
 "use client";
 
 import { notFound, useParams } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import MasteryQuiz from "./QuizClient";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
@@ -13,13 +13,13 @@ type Quiz = { moduleId: string; questions: Question[] };
 export default function MasteryPage() {
   const params = useParams();
   const moduleId = params?.id as string;
-  const [numQuestions, setNumQuestions] = useState(10);
   const [quiz, setQuiz] = useState<Quiz | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [showQuiz, setShowQuiz] = useState(false);
+  const [hasGenerated, setHasGenerated] = useState(false);
 
-  const generateQuiz = async () => {
+  const generateQuiz = useCallback(async () => {
     if (!moduleId) return;
     
     setLoading(true);
@@ -33,7 +33,7 @@ export default function MasteryPage() {
         },
         body: JSON.stringify({
           module_id: moduleId,
-          num_questions: numQuestions,
+          num_questions: 10,
         }),
       });
 
@@ -45,12 +45,20 @@ export default function MasteryPage() {
 
       setQuiz(data);
       setShowQuiz(true);
+      setHasGenerated(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to generate quiz");
     } finally {
       setLoading(false);
     }
-  };
+  }, [moduleId]);
+
+  // Auto-generate quiz when page loads
+  useEffect(() => {
+    if (moduleId && !hasGenerated) {
+      generateQuiz();
+    }
+  }, [moduleId, hasGenerated, generateQuiz]);
 
   if (!moduleId) {
     return notFound();
@@ -72,10 +80,13 @@ export default function MasteryPage() {
               onClick={() => {
                 setShowQuiz(false);
                 setQuiz(null);
+                setHasGenerated(false);
+                generateQuiz();
               }}
-              className="px-4 py-2 rounded-lg bg-gray-100 text-black hover:bg-gray-200"
+              disabled={loading}
+              className="px-4 py-2 rounded-lg bg-gray-100 text-black hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Generate New Quiz
+              {loading ? "Generating..." : "Generate New Quiz"}
             </button>
           </div>
 
@@ -125,52 +136,37 @@ export default function MasteryPage() {
           </div>
         </div>
 
-        {/* Quiz Setup Card */}
-        <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-xl font-semibold text-black mb-4">Generate Quiz Questions</h3>
-              <p className="text-gray-600 mb-6">
-                Select the number of questions you'd like to practice. Questions will be generated
-                specifically for Module {moduleId} content.
-              </p>
+        {/* Loading State */}
+        {loading && (
+          <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-12">
+            <div className="flex flex-col items-center justify-center space-y-4">
+              <div className="relative">
+                <div className="w-16 h-16 border-4 border-gray-200 border-t-[#800020] rounded-full animate-spin"></div>
+              </div>
+              <p className="text-gray-600 text-lg font-medium">Generating quiz questions...</p>
+              <p className="text-gray-500 text-sm">This may take a moment</p>
             </div>
+          </div>
+        )}
 
+        {/* Error State */}
+        {error && !loading && (
+          <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
             <div className="space-y-4">
-              <label htmlFor="numQuestions" className="block text-sm font-medium text-gray-700">
-                Number of Questions
-              </label>
-              <select
-                id="numQuestions"
-                value={numQuestions}
-                onChange={(e) => setNumQuestions(Number(e.target.value))}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#800020] focus:border-[#800020] text-gray-900"
-                disabled={loading}
-              >
-                {[5, 10, 15, 20].map((num) => (
-                  <option key={num} value={num}>
-                    {num} questions
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {error && (
               <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
                 <p className="text-sm text-red-700">{error}</p>
               </div>
-            )}
-
-            <button
-              onClick={generateQuiz}
-              disabled={loading}
-              className="w-full px-6 py-3 rounded-lg text-white font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-              style={{ backgroundColor: "#800020" }}
-            >
-              {loading ? "Generating Questions..." : "Generate Quiz"}
-            </button>
+              <button
+                onClick={generateQuiz}
+                disabled={loading}
+                className="w-full px-6 py-3 rounded-lg text-white font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                style={{ backgroundColor: "#800020" }}
+              >
+                Try Again
+              </button>
+            </div>
           </div>
-        </div>
+        )}
       </main>
     </div>
   );
