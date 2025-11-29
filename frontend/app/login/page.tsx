@@ -194,13 +194,13 @@ export default function LoginPage() {
   const handleStudentSignIn = (e: FormEvent) => {
     e.preventDefault();
     if (!fakeLogin("student", email, password)) return;
-    router.push("/student");
+    router.push("/login/student");
   };
 
   const handleProfessorSignIn = (e: FormEvent) => {
     e.preventDefault();
     if (!fakeLogin("professor", email, password)) return;
-    router.push("/teacher");
+    router.push("/login/teacher");
   };
 
   const handleProfessorSignup = (e: FormEvent) => {
@@ -212,7 +212,7 @@ export default function LoginPage() {
     }
 
     if (!fakeSignup()) return;
-    router.push("/teacher");
+    router.push("/login/teacher");
   };
 
   const handleStudentSignup = (e: FormEvent) => {
@@ -225,8 +225,8 @@ export default function LoginPage() {
 
     if (!fakeSignup()) return;
 
-    // For now both journeys go to /student
-    router.push("/student");
+    // For now both journeys go to /login/student
+    router.push("/login/student");
   };
 
   // Reset common fields when switching high-level flows

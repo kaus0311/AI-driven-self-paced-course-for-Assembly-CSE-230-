@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --background: #f7efe4;
@@ -9,7 +7,6 @@
   --input-bg: #e9dcc6;
 }
 
-/* Global body styling */
 body {
   background-color: var(--background);
   color: var(--foreground);
