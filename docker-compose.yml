@@ -23,8 +23,6 @@ services:
       - UVICORN_HOST=0.0.0.0
       - UVICORN_PORT=8000
       - CORS_ALLOW_ORIGINS=http://localhost:3000,http://frontend:3000
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
-      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o-mini}
       - CREATEAI_API_TOKEN=${CREATEAI_API_TOKEN}
       - CREATEAI_API_URL=${CREATEAI_API_URL}
     depends_on:
