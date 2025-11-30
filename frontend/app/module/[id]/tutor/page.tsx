@@ -2,7 +2,11 @@ import Link from "next/link";
 
 import TutorClient from "./TutorClient";
 
-export const runtime = "nodejs";
+export async function generateStaticParams() {
+  return ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"].map((id) => ({
+    id,
+  }));
+}
 
 export default async function TutorPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

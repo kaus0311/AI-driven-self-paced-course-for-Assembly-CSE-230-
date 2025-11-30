@@ -3,9 +3,16 @@ frontend/node_modules
 frontend/.next
 frontend/.turbo
 frontend/.env.local
+frontend/.env.production
+
+# Next.js build output
+frontend/out
+frontend/*.zip
 
 # Python
-backend/__pycache__
+__pycache__/
+*.pyc
+*.pyo
 backend/.venv
 backend/.env
 
@@ -14,7 +21,11 @@ backend/.env
 
 # Docker
 db_data
+
+# Environment variables
 .env
+.env.*
+!.env.example
 
 # virtual environment
 .venv

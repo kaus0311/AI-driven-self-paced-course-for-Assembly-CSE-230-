@@ -246,13 +246,20 @@ const moduleData: Record<string, {
   }
 };
 
+export async function generateStaticParams() {
+  return Object.keys(moduleData).map((id) => ({
+    id,
+  }));
+}
+
+
 export default async function ModuleDetailPage(
-  { params }: { params: Promise<{id: string} > }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const { id } = await params;
   const module = moduleData[id] || moduleData["1"];
   const progressNum = parseInt(module.progress.replace("%", ""));
-  
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
